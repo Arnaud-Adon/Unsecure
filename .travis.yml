@@ -1,0 +1,14 @@
+language: php
+php:
+  - 7.1.9
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar require --dev friendsofphp/php-cs-fixer
+
+script:
+  - php php-cs-fixer.phar fix /src/UnsecureBundle/Controller/ArticleController.php
+
+notifications:
+  slack: ipssi-d19-1:6TrkOvgPzMdEnm9nupTd0oDG
+
